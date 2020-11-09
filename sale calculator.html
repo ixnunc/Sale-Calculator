@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sales Calculator</title>
+	<h1>Sales Calculator</h1>
+	<link rel="stylesheet" type="text/css" href="sale.css
+	">
+	<script type="text/javascript" src="sale.js"></script>
+</head>
+<body>
+	<div class="base">
+		<label for="base">$</label>
+		<input type="number" name="base" id="base">
+	</div>
+	<div class="sale">
+		<label for="sale" id="generic-sale">%</label>
+		<button onclick="calc15()">15%</button>
+		<button onclick="calc25()">25%</button>
+		<button onclick="calc45()">45%</button>
+		<button onclick="calc65()">65%</button>
+	</div>
+	<div class="sale_input">
+		<input type="number" name="sale_input" id="sale_input">
+		<label for="sale_input">%</label>
+	</div>
+	<div class="equals">
+		<button class="equals" onclick="calcsale()">=</button>
+	</div>
+	<div>
+		<label for="total" id="total-box">Total</label>
+		<input type="none" name="total" class="total" id="total">
+	</div>
+
+	<div>
+		<button class="clear" id="clear" onclick="clear()">Clear</button>
+	</div>
+
+</body>
+</html>
