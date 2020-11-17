@@ -1,27 +1,39 @@
-	// functions to calculate total
-function calc15() {
-	document.getElementById("total").value = document.getElementById("base").value * .85;
-}
+// variables for input values
 
-function calc25() {
-	document.getElementById("total").value = document.getElementById("base").value * .75;
-}
+const base = document.querySelector('#base');
+const custom = document.querySelector('#custom');
+const total = document.querySelector('#total');
 
-function calc45() {
-	document.getElementById("total").value = document.getElementById("base").value * .55;
-}
+// functions to calculate total cost
 
-function calc65() {
-	document.getElementById("total").value = document.getElementById("base").value * .35;
-}
-	// function converts user input to sale value
-function calcsale() {
-	document.getElementById("total").value = document.getElementById("base").value * (100-(document.getElementById("sale_input").value))/100;
-}
+document.querySelector('#c15').addEventListener('click', () => {
+	total.value = (base.value * .85).toFixed(2);
+});
 
-	// resets variables so user can enter different values; assigned to clear button
-function clears() {
-	document.getElementById("total").value = "";
-	document.getElementById("base").value = "";
-	document.getElementById("sale_input").value = "";
-}
+document.querySelector('#c25').addEventListener('click', () => {
+	total.value = (base.value * .75).toFixed(2);
+});
+
+document.querySelector('#c45').addEventListener('click', () => {
+	total.value = (base.value * .55).toFixed(2);
+});
+
+document.querySelector('#c65').addEventListener('click', () => {
+	total.value = (base.value * .35).toFixed(2);
+});
+
+// conditional to return empty value if custom input is empty
+document.querySelector('.equals').addEventListener('click', () => {
+	if (custom.value > 0) {
+		total.value = (base.value - (base.value * custom.value/100)).toFixed(2);
+	} else {
+		total.value = '';
+	}
+});
+
+// clear button to start over
+document.querySelector('#clear').addEventListener('click', () => {
+	base.value = '';
+	custom.value = '';
+	total.value = '';
+});
